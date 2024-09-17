@@ -35,5 +35,11 @@
     content: '\f070'; /* FontAwesome eye-slash icon */
   }
 }
+.box{
+  transition: .7s;
+  &:hover{
+    box-shadow: 1px 1px 10px 1px rgb(71, 75, 71) !important;
+  }
+}
 // end styles to toggle password visibility
 

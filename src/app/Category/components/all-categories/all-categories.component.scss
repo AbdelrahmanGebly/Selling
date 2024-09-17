@@ -4,9 +4,6 @@ img{
 
 .box{
   cursor: pointer;
-  border: 1px solid rgb(41, 224, 41);
+  border: 1px solid rgba(52, 54, 52, 0.5);
   border-radius: 5px;
-  &:hover{
-    box-shadow: 1px 1px 5px rgb(19, 137, 19);
-  }
 }
