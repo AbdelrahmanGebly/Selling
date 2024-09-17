@@ -1,0 +1,39 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'ngx-toastr/toastr';
+.activeLink{
+  background-color: red;
+  color: #fff !important;
+  border-radius: 5px;
+}
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.form-control{
+  outline: none !important;
+}
+
+// start styles to toggle password visibility
+.input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  .eye-icon {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #888;
+    &::before{
+      content: '\f06e'; /* FontAwesome eye icon */
+      font-family: "FontAwesome";
+    }
+  }
+  .eye-icon.show::before {
+    content: '\f070'; /* FontAwesome eye-slash icon */
+  }
+}
+// end styles to toggle password visibility
+

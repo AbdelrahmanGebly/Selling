@@ -1,0 +1,16 @@
+<section class="container-fluid py-5">
+  <div>
+    <input type="text" class="form-control border border-black w-50 m-auto mb-4 border" name="search"
+      [(ngModel)]="searchValue" (ngModelChange)="SearchByName()" id="search" placeholder="Search By Title">
+  </div>
+  <div class="row g-4">
+    <div class="col-sm-6 col-lg-4 col-xl-3" *ngFor="let category of filteredCategories">
+      <div class="box text-center pt-2">
+        <img [src]="category.image" [alt]="category.title" class="img-fluid">
+        <div class="p-2 text-center">
+          <h3 class="h5 mb-1">{{category.name | cutting : 2}}</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

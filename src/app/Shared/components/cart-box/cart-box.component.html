@@ -1,0 +1,10 @@
+<section class="border">
+  <div class="top">
+    <img [src]="item.imageCover" [alt]="item.title" class="img-fluid">
+    <div class="p-2 text-center">
+      <h3 class="h5 mb-1">{{item.title | cutting : 2}}</h3>
+      <p class="text-info m-0">{{item.category.name}}</p>
+      <p class="m-0 small">{{item.description | cutting : 2 }}</p>
+    </div>
+  </div>
+</section>

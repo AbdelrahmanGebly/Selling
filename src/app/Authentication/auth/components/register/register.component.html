@@ -1,0 +1,109 @@
+<section class="mt-4 text-center">
+  <form class="w-50 text-start p-4 bg-dark-subtle shadow rounded mx-auto" [formGroup]="registerForm">
+    <div class="my-2">
+      <label class="mb-1" for="name">User Name</label>
+      <input type="text" class="form-control" id="name" formControlName="name" />
+      <p class="alert alert-danger" *ngIf="
+          registerForm.get('name')?.value == '' &&
+          registerForm.get('name')?.touched
+        ">
+        please enter your name
+      </p>
+      <p class="alert alert-danger" *ngIf="
+      !registerForm.get('name')?.valid &&
+      registerForm.get('name')?.touched &&
+      !(registerForm.get('name')?.value == '')&&
+      !(registerForm.get('name')?.value.length < 4)
+      ">
+        name must contain letters
+      </p>
+      <p class="alert alert-danger" *ngIf="
+      !registerForm.get('name')?.valid &&
+      registerForm.get('name')?.touched &&
+      !(registerForm.get('name')?.value == '')&&
+      registerForm.get('name')?.value.length < 4
+      ">
+        name must contain at least four characters
+      </p>
+    </div>
+    <div class="my-2">
+      <label class="mb-1" for="email">Email</label>
+      <input type="email" class="form-control" id="email" formControlName="email" />
+      <p class="alert alert-danger" *ngIf="
+          registerForm.get('email')?.value == '' &&
+          registerForm.get('email')?.touched
+        ">
+        please enter your email
+      </p>
+      <p class="alert alert-danger" *ngIf="
+      !registerForm.get('email')?.valid &&
+      registerForm.get('email')?.touched &&
+      !(registerForm.get('email')?.value == '')
+      ">
+        Please enter a vlid email
+      </p>
+    </div>
+    <div class="my-2">
+      <label class="mb-1" for="password">Password</label>
+      <div class="input-container">
+        <input [type]="passwordInputType" class="form-control" id="password" formControlName="password" />
+        <i (click)="togglePasswordVisibility()" [ngClass]="{'eye-icon': true, 'show': isPasswordVisible}"></i>
+      </div>
+      <p class="alert alert-danger" *ngIf="
+          registerForm.get('password')?.value == '' &&
+          registerForm.get('password')?.touched
+        ">
+        please enter your password
+      </p>
+      <p class="alert alert-danger" *ngIf="
+      !registerForm.get('password')?.valid &&
+      registerForm.get('password')?.touched &&
+      !(registerForm.get('password')?.value == '')
+      ">
+        Password must contain (uppercase , lowercase , numbers)
+      </p>
+    </div>
+    <div class="my-2">
+      <label class="mb-1" for="rePassword">Repassword</label>
+      <div class="input-container">
+        <input [type]="rePasswordInputType" class="form-control" id="rePassword" formControlName="rePassword" />
+        <i (click)="toggleRePasswordVisibility()" [ngClass]="{'eye-icon': true, 'show': isRePasswordVisible}"></i>
+      </div>
+      <p class="alert alert-danger" *ngIf="
+          registerForm.get('rePassword')?.value == '' &&
+          registerForm.get('rePassword')?.touched
+        ">
+        please enter your repassword
+      </p>
+      <p class="alert alert-danger" *ngIf="
+      !registerForm.get('rePassword')?.valid &&
+      registerForm.get('rePassword')?.touched &&
+      !(registerForm.get('rePassword')?.value == '')
+      ">
+        Repassword must contain (uppercase , lowercase , numbers)
+      </p>
+    </div>
+    <div class="my-2">
+      <label class="mb-1" for="phone">Phone</label>
+      <input type="tel" class="form-control" id="phone" formControlName="phone" />
+      <p class="alert alert-danger" *ngIf="
+          registerForm.get('phone')?.value == '' &&
+          registerForm.get('phone')?.touched
+        ">
+        please enter your phone number
+      </p>
+      <p class="alert alert-danger" *ngIf="
+      !registerForm.get('phone')?.valid &&
+      registerForm.get('phone')?.touched &&
+      !(registerForm.get('phone')?.value == '')
+      ">
+        Enter a valid phone number
+      </p>
+    </div>
+    <div class="mt-3">
+      <button class="btn btn-success me-2" (click)="register()" [disabled]="!registerForm.valid">
+        Register
+      </button>
+    </div>
+  </form>
+</section>
