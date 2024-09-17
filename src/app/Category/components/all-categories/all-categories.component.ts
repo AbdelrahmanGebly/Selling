@@ -51,8 +51,8 @@ getAllCategories(){
     }
   })
 }
-SearchByName(){
-  this.filteredCategories = this.categories.filter(item=> item.name.includes(this.searchValue))
+searchByName(){
+  this.filteredCategories = this.categories.filter(item=> item.name.toLowerCase().includes(this.searchValue.toLowerCase()))
 }
 
 }

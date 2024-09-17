@@ -1,3 +1,4 @@
+import { BrandsComponent } from './Category/components/brands/brands.component';
 import { LoginComponent } from './Authentication/auth/components/login/login.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -24,6 +25,7 @@ const routes: Routes = [
     {path:'cart',component:CartComponent,title:"Cart",canActivate:[authGuard]},
     {path:'whishlist',component:WhishListComponent,title:"Whishlist",canActivate:[authGuard]},
     {path:'categories',component:AllCategoriesComponent,title:"All Categories",canActivate:[authGuard]},
+    {path:'brands',component:BrandsComponent,title:"Brands",canActivate:[authGuard]},
     {path:'products',component:AllProductsComponent,title:"All Products",canActivate:[authGuard]},
     {path:'**',component:NotFoundComponent,title:"Error 404"},
   ]}

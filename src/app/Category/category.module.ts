@@ -4,13 +4,15 @@ import { AllCategoriesComponent } from './components/all-categories/all-categori
 import { CategoryDetailsComponent } from './components/category-details/category-details.component';
 import { FormsModule } from '@angular/forms';
 import { SharedModule } from '../Shared/shared.module';
+import { BrandsComponent } from './components/brands/brands.component';
 
 
 
 @NgModule({
   declarations: [
     AllCategoriesComponent,
-    CategoryDetailsComponent
+    CategoryDetailsComponent,
+    BrandsComponent,
   ],
   imports: [
     CommonModule,
