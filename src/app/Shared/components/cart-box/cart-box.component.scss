@@ -1,8 +1,11 @@
 section{
-  min-height: 380px;
   .top{
     cursor: pointer;
   }
   transition:.7s;
   border-radius: 5px;
+
+  .rating-color{
+    color: rgb(250, 200, 17);
+  }
 }

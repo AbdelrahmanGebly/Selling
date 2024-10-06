@@ -4,7 +4,22 @@
     <div class="p-2 text-center">
       <h3 class="h5 mb-1">{{item.title | cutting : 2}}</h3>
       <p class="text-info m-0">{{item.category.name}}</p>
-      <p class="m-0 small">{{item.description | cutting : 2 }}</p>
+      <span class="small d-flex justify-content-between">
+        <p>{{item.price | currency:'$'}}</p>
+        <div class="rating">
+          <i class="fa-solid fa-star"
+            [ngClass]="item.ratingsAverage > 0 && !(item.ratingsAverage < 1)? 'rating-color' : ''"></i>
+          <i class="fa-solid fa-star"
+            [ngClass]="item.ratingsAverage > 1 && !(item.ratingsAverage < 2)? 'rating-color' : ''"></i>
+          <i class="fa-solid fa-star"
+            [ngClass]="item.ratingsAverage > 2 && !(item.ratingsAverage < 3)? 'rating-color' : ''"></i>
+          <i class="fa-solid fa-star"
+            [ngClass]="item.ratingsAverage > 3 && !(item.ratingsAverage < 4)? 'rating-color' : ''"></i>
+          <i class="fa-solid fa-star"
+            [ngClass]="item.ratingsAverage > 4 && !(item.ratingsAverage < 5)? 'rating-color' : ''"></i>
+          <span>{{item.ratingsAverage}}</span>
+        </div>
+      </span>
     </div>
   </div>
 </section>
